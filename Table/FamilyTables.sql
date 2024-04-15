@@ -16,7 +16,7 @@ begin
     (
       ID int not null identity,
       SurName nvarchar(20),
-      BudgetValue int,
+      BudgetValue decimal(18, 2),
       constraint PK_Family primary key (ID)
     );
 end;
@@ -29,9 +29,9 @@ begin
       ID_SKU int not null,
       ID_FAMILY int not null,
       Quantity int,
-      Value int,
+      Value decimal(18, 2),
       PurchaseDate date, 
-      DiscountValue int,
+      DiscountValue decimal(18, 2),
       constraint PK_Basket primary key (ID)
     );
     alter table dbo.Basket add constraint FK_Basket_ID_SKU_SKU foreign key(ID_SKU) references dbo.SKU (ID);
